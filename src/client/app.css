@@ -1,0 +1,70 @@
+h1 {
+  color: green;
+}
+
+body {
+  margin: auto;
+  padding: 20px;
+}
+
+textarea {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  width: 90%;
+  height: 500px;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #09f;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  font-size: 1.2em;
+}
+
+button:disabled {
+  opacity: .3;
+}
+
+#modal {
+  position: absolute;
+  background-color: rgba(0,0,0,.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content {
+  position: absolute;
+  background-color: white;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+}
+
+#content {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
