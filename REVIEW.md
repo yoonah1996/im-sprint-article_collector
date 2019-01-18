@@ -1,8 +1,8 @@
 # Article Collector
 ## Objectives
-- [ ] CommonJS 패턴, 즉 export와 require statements를 이용해 well-organized codebase를 만든다.
-- [ ] fs module을 활용해 파일을 다룰 줄 안다.
-- [ ] https 또는 http module을 활용해 서버 상에서 HTTP 요청하는 법을 익힌다.
+- [ ] CommonJS 패턴, 즉 `export`와 `require` statements를 이용해 well-organized codebase를 만든다.
+- [ ] `fs` module을 활용해 파일을 다룰 줄 안다.
+- [ ] `https` 또는 `http` module을 활용해 서버 상에서 HTTP 요청하는 법을 익힌다.
 - [ ] HTTP server routing을 다루면서 웹 서버가 어떻게 작동하는지 이해한다.
 - [ ] Node application을 디버깅 할 수 있다.
 ## Improvements

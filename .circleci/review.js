@@ -69,7 +69,7 @@ rl.on('line', line => {
         });
     
         req.on('error', (e) => {
-            console.log('error');
+            throw new Error('data did not send to airtable correctly')
             // callback(new Error('failure'));
         });
 

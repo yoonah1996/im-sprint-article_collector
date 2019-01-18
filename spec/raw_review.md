@@ -1,11 +1,10 @@
 # Article Collector
 ## Objectives
-이번 Sprint를 진행하며 수강생분이 이해하신 학습목표를 선택해주세요.([ ]안에 알파벳 소문자 x를 입력해주세요)
-- [ ] Node.js에 대해 이해하고 설명할 수 있다.
-- [ ] Package Manager가 무엇인지 알고, 사용 할 수 있다.
-- [ ] CommonJS 패턴을 사용 할 줄 안다.
-- [ ] Front-end 개발자를 위한 API 문서를 작성 할 수 있다.
-- [ ] Client에서 Server와 통신 할 수 있다.
+- [ ] CommonJS 패턴, 즉 `export`와 `require` statements를 이용해 well-organized codebase를 만든다.
+- [ ] `fs` module을 활용해 파일을 다룰 줄 안다.
+- [ ] `https` 또는 `http` module을 활용해 서버 상에서 HTTP 요청하는 법을 익힌다.
+- [ ] HTTP server routing을 다루면서 웹 서버가 어떻게 작동하는지 이해한다.
+- [ ] Node application을 디버깅 할 수 있다.
 ## Improvements
 이번 Sprint에서 더 개선이 필요하다고 느끼는 항목을 선택해주세요.([ ]안에 알파벳 소문자 x를 입력해주세요)
 - [ ] Sessions
