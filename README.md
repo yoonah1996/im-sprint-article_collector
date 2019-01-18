@@ -8,6 +8,7 @@
 - HTTP server routing을 다루면서 웹 서버가 어떻게 작동하는지 이해한다.
 - Node application을 디버깅 할 수 있다.
 
+
 ## Sprint를 시작하기 전 알고있어야 하는 것들
 
 Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니다.
@@ -39,6 +40,7 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 - [ ] Buffer, WritableStream, ReadableStream의 개념을 이해하고 사용해보기
 - [ ] Web app에 업로드를 어떻게 할 수 있는지 알아보기
 
+
 ## Sprint 진행 방법
 
 1. 현재 repo를 자신의 Github으로 fork 합니다.
@@ -51,3 +53,5 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 1. [REVIEW.md](REVIEW.md) 파일에 이번 Sprint를 마무리하며 review를 작성합니다.
 2. 자신의 remote repo로 push 합니다.
 3. Upstream repo에서 pull request를 만듭니다.
+
+
