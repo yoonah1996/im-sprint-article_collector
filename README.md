@@ -16,7 +16,6 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 
 - [ ] HTTP 요청과 응답에 관하여 알고있다.
 - [ ] HTTP GET 및 POST 메소드에 대해 이해하고 있다.
-- [ ] Routing의 개념을 이해할 수 있다.
 - [ ] Content-Type이 무엇인지, 대표적인 Content-Type으로는 어떠한 것이 있는지 이해하고 있다.
 - [ ] Content-Type을 HTTP 요청에서 어떻게 사용하는지 알고 있다.
 - [ ] Node app에서의 비동기 요청과 callback을 이해하고 있다.
