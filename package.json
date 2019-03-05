@@ -9,7 +9,7 @@
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "mocha spec --exit --timeout 20000",
+    "test": "node spec/getReview.js && mocha spec --exit --timeout 20000",
     "lint": "eslint src"
   },
   "author": "Code States",
@@ -34,9 +34,6 @@
     "concurrently": "^4.0.0",
     "css-loader": "^1.0.0",
     "eslint": "^5.0.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
