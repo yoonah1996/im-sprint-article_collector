@@ -8,9 +8,6 @@ const fileHelper = require('../helpers/file');
 const router = express.Router();
 const { JSDOM } = jsdom;
 
-// 라우터별 endpoint 분기 설정 관련하여서는 추후 express 스프린트에서 진행 예정
-// 현재로서는 '/:line'은 클라이언트로부터 몇 번째 줄의 url인지에 대한 정보를 넘겨받는 용도로만 인지하고 진행하시면 됩니다
-
 // GET /data/{lineNo}
 router.get('/:line', async (req, res) => {
   const filename = `./data/${req.params.line}.txt`;
