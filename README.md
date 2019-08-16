@@ -50,7 +50,6 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 ## 제출 방법
 
 1. [REVIEW.md](REVIEW.md) 파일에 이번 Sprint를 마무리하며 review를 작성합니다.
-2. 자신의 remote repo로 push 합니다.
-3. Upstream repo에서 pull request를 만듭니다.
+2. `npm run submit`을 통해 제출합니다. AWS serverless lambda를 통해 CI가 돌게 됩니다. 
 
 
