@@ -9,10 +9,11 @@
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "node __test__/getReview.js && mocha __test__/ --exit",
+    "test": "mocha __test__/ --exit",
+    "submit-test": "mocha __test__/ --reporter reporter.js --exit",
     "check": "node .airci/submit.js",
     "lint": "eslint src",
-    "submit": "npm-run-all -c -s --silent test check"
+    "submit": "npm-run-all -c -s --silent submit-test check"
   },
   "author": "Code States",
   "license": "",
