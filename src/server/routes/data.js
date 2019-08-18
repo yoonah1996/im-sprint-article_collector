@@ -1,35 +1,35 @@
-const express = require('express');
-const fs = require('fs');
-const jsdom = require('jsdom');
+const express = require("express");
+const fs = require("fs");
+const jsdom = require("jsdom");
 
-const fetchHelper = require('../helpers/fetch');
-const fileHelper = require('../helpers/file');
+const fetchHelper = require("../helpers/fetch");
+const fileHelper = require("../helpers/file");
 
 const router = express.Router();
 const { JSDOM } = jsdom;
 
 // GET /data/{lineNo}
-router.get('/:line', async (req, res) => {
+router.get("/:line", async (req, res) => {
   const filename = `./data/${req.params.line}.txt`;
-  res.set('Content-Type', 'application/json');
+  res.set("Content-Type", "application/json");
 
   if (fs.existsSync(filename)) {
     fileHelper
       .readFile(filename)
-      .then((f) => {
+      .then(f => {
         res.send(
           JSON.stringify({
             id: req.params.line,
-            status: 'exist',
+            status: "exist",
             body: f
           })
         );
       })
-      .catch((err) => {
+      .catch(err => {
         res.send(
           JSON.stringify({
             id: req.params.line,
-            status: 'error',
+            status: "error",
             err: err.toString()
           })
         );
@@ -38,22 +38,22 @@ router.get('/:line', async (req, res) => {
     res.send(
       JSON.stringify({
         id: req.params.line,
-        status: 'nonexist'
+        status: "nonexist"
       })
     );
   }
 });
 
 // POST /data/{lineNo}
-router.post('/:line', async (req, res) => {
+router.post("/:line", async (req, res) => {
   const lineNo = req.params.line;
-  fileHelper.readLineFromSourceList(lineNo).then((line) => {
-    fetchHelper.retrieveArticle(line).then((html) => {
+  fileHelper.readLineFromSourceList(lineNo).then(line => {
+    fetchHelper.retrieveArticle(line).then(html => {
       const filename = `./data/${lineNo}.txt`;
       const dom = new JSDOM(html); // node 환경에서도 DOM element에 접근할 수 있도록 해주는 라이브러리 JSDOM 사용
-      const content = dom.window.document.querySelector('.postArticle-content').textContent;
+      const content = dom.window.document.querySelector("article").textContent;
       fileHelper.writeFile(filename, content);
-      res.send('ok');
+      res.send("ok");
     });
   });
 });
