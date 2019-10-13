@@ -49,6 +49,5 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 
 ## 제출 방법
 1. `npm run test`를 통해 작성된 코드를 테스트 합니다.
-2. `npm run submit`을 통해 제출합니다. AWS serverless lambda를 통해 CI가 돌게 됩니다. 과제를 제출하기 전에 `npm run test`를 통해 테스트 결과를 업데이트 해주시기 바랍니다.
-
-
+2. `npm run test-report`를 통해 테스트 결과를 업데이트 합니다. `npm run test-report`를 하지 않은 경우, 과제가 제출되지 않습니다.
+3. `npm run submit`을 통해 제출합니다. AWS serverless lambda를 통해 CI가 돌게 됩니다. 과제를 제출하기 전에 `npm run test-report`를 통해 테스트 결과를 업데이트 해주시기 바랍니다.
