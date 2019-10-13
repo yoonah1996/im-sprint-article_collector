@@ -5,15 +5,16 @@
   "main": "src/server/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "npm run build && node src/server/index.js",
+    "start-server" : "node src/server/index.js",
+    "start": "npm-run-all -s -c build start-server",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "mocha __test__/ --exit",
-    "submit-test": "mocha __test__/ --reporter reporter.js --exit",
+    "test": "mocha __test__/spec.js --reporter reporter.js --exit",
+    "pre-test": "node __test__/preTest.js",
     "check": "node .airci/submit.js",
     "lint": "eslint src",
-    "submit": "npm-run-all -c -s --silent submit-test check"
+    "submit": "npm-run-all -s --silent pre-test check"
   },
   "author": "Code States",
   "license": "",
