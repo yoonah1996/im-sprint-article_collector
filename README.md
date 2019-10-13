@@ -48,8 +48,7 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 4. 재밌게 coding을 시작합니다.
 
 ## 제출 방법
-
-1. [REVIEW.md](REVIEW.md) 파일에 이번 Sprint를 마무리하며 review를 작성합니다.
-2. `npm run submit`을 통해 제출합니다. AWS serverless lambda를 통해 CI가 돌게 됩니다. 
+1. `npm run test`를 통해 작성된 코드를 테스트 합니다.
+2. `npm run submit`을 통해 제출합니다. AWS serverless lambda를 통해 CI가 돌게 됩니다. 과제를 제출하기 전에 `npm run test`를 통해 테스트 결과를 업데이트 해주시기 바랍니다.
 
 
