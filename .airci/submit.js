@@ -3,9 +3,11 @@ const colors = require('colors')
 
 // Get sutdent data and test results from student.json & result.json
 let studentInfo = require("../student.json");
-let testResult = require("../result.json")
-let { theClass, student, sprint } = studentInfo;
-let {passed, failed} = testResult
+let testResult = require("../results.json")
+let { th, name, sprint } = studentInfo;
+let { passed, failed } = testResult;
+// let passed = numPassedTests;
+// let failed = numFailedTests;
 
 console.log(['테스트 결과입니다.', `통과된 테스트: ${passed}`.green, `통과하지 못한 테스트: ${failed}`.red].join('\n'))
 
@@ -17,34 +19,34 @@ const options = {
     "Content-Type": "application/json",
   }
 };
-
+    
 const result = new Promise((resolve, reject) => {
   const req = https.request(options, res => {
     let data = '';
-
+    
     if (res.statusCode === 500) {
       throw new Error("There is an error on submiting")
     }
-
+    
     res.on("data", chunk => {
       data += chunk;
     });
-
+    
     res.on("end", () => {
       resolve(JSON.parse(data.toString()))
     });
   });
-
+    
   req.on("error", e => {
     throw new Error("data did not submit correctly");
   });
-
+    
   // send the request
   req.write(
     JSON.stringify({
       fields: {
-        class: theClass,
-        name: student,
+        class: th,
+        name: name,
         sprint: sprint,
         passed,
         failed
@@ -53,10 +55,10 @@ const result = new Promise((resolve, reject) => {
   );
   req.end();
 })
-
+    
 result.then(result => {
   if (failed !== 0) {
-    console.log('정상적으로 제출이 되었지만 통과하지 못한 테스트가있습니다.', '\n테스트가 모두 통과할 수 있도록 도전해보세요!'.rainbow)
+    console.log('정상적으로 제출이 되었지만 통과하지 못한 테스트가있습니다.'.blue, '\n테스트가 모두 통과할 수 있도록 도전해보세요!'.rainbow)
   } else {
     console.log('정상적으로 제출이 되었고 모든 테스트를 통과하였습니다.'.rainbow)
   }
