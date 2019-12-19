@@ -2,13 +2,13 @@ const fs = require('fs');
 
 async function writeFile(filename, body) {
   return new Promise((resolve, reject) => {
-    // TODO
+    // TODO: read the content with specific filename
   });
 }
 
 async function readFile(filename) {
   return new Promise((resolve, reject) => {
-    // TODO
+    // TODO: save the content with specific filename
   });
 }
 
@@ -22,7 +22,7 @@ async function writeSourceListFile(body) {
 
 async function readLineFromSourceList(nthline) {
   return new Promise((resolve, reject) => {
-    // TODO
+    // TODO : read line via specific nthline
   });
 }
 
