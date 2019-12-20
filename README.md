@@ -32,12 +32,20 @@ Sprint를 원활히 진행하기 위해 꼭 알고있어야하는 것들입니�
 - [ ] 프로젝트 구조를 파악하기
 - [ ] retriveArticle 같이 구현해보기
 
-## Advanced 한 과제들
-
+## Advanced Challenge
+### fs 
 - [ ] 매우 큰 파일(100MB 이상의 텍스트 파일)을 어떻게 불러올 수 있는지 알아보기
 - [ ] 텍스트가 아닌 binary 형태의 파일(이미지)를 어떻게 불러올 수 있는지 알아보기
 - [ ] Buffer, WritableStream, ReadableStream의 개념을 이해하고 사용해보기
 - [ ] Web app에 업로드를 어떻게 할 수 있는지 알아보기
+
+### server
+- [ ] https 뿐만 아니라 http 형태의 URL도 (e.g. Naver) 사용가능하도록 만들어보세요.
+- [ ] medium blog가 아닌, 다른 형태의 HTML을 응답으로 받더라도, 내용을 수집할 수 있도록 만드세요.
+
+### client
+- [ ] `<textarea>`를 사용하는 것 말고, 좀 더 나은 입력폼을 만들어보세요.
+- [ ] modal창을 구현하는 방법을 연구해보고, 어떻게 modal을 React Component화 시킬 수 있는지 연구해보세요.
 
 
 ## Sprint 진행 방법
