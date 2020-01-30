@@ -23,7 +23,7 @@ router.get("/:line", async (req, res) => {
 router.post("/:line", async (req, res) => {
   const lineNo = req.params.line;
 
-  // TODO : Help function을 이용하여, 주어진 filename의 내용을 읽을 수 있도록 구현하세요.
+  // TODO : Help function을 이용하여, 주어진 filename에 내용을 저장할 수 있도록 구현하세요.
   /*
    * Hint : Helper function(readLineFromSourceList, retrieveArticle, wrtieFile)이 필요할 것 입니다.
    * 1) 주어진 lineNo를 통해, 해당 line에 존재하는 url를 얻는다.
