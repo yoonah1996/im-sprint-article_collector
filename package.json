@@ -11,11 +11,7 @@
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "lint": "eslint src",
-    "test-report": "mocha __test__/spec.js --reporter reporter.js --exit",
-    "test": "mocha __test__/spec.js --exit",
-    "pre-test": "node __test__/preTest.js",
-    "check": "node .airci/submit.js",
-    "submit": "npm-run-all -s --silent pre-test check"
+    "test": "mocha __test__/spec.js --exit"
   },
   "author": "Code States",
   "license": "",
