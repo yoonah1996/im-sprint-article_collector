@@ -33,10 +33,7 @@ router.get("/:line", async (req, res) => {
   //   res.send();
   // }
   return await readFile(filename)
-  .then(data=>{
-    // console.log(data);
-    res.send(JSON.stringify({body : data}))
-  })
+  .then(data=>res.send(JSON.stringify({body: data})))
   .catch(err=>res.send(err));
   
 
@@ -61,11 +58,12 @@ router.post("/:line", async (req, res) => {
   const readUrl = await readLineFromSourceList(lineNo);
   const readHtml = await retrieveArticle(readUrl);
   // console.log('readHtml', readHtml);
-  // const dom = new JSDOM(typeof readHtml);
-  // const articleInDom = dom.window.document.querySelector('#root').textContent;
-  // console.log('this is article', articleInDom);
 
-  await wrtieFile(`./data/${lineNo}.txt`, readHtml)
+  const dom = new JSDOM(readHtml);
+  const articleInDom = dom.window.document.querySelector('#root article').textContent;
+  
+
+  await wrtieFile(`./data/${lineNo}.txt`, articleInDom)
   const read = readFile(`./data/${lineNo}.txt`)
   res.send(read);
 
