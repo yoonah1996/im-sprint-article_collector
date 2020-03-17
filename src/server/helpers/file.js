@@ -25,15 +25,15 @@ async function readFile(filename) {
     })
   });
 }
-
+//source.txt파일을 읽는다.
 async function readSourceListFile() {
   return readFile("./data/source.txt");
 }
-
+//source.txt파일에 글을 쓴다.
 async function writeSourceListFile(body) {
   return writeFile("./data/source.txt", body);
 }
-
+//source.txt파일의 n번째 줄을 읽는다.
 async function readLineFromSourceList(nthline) {
   return new Promise((resolve, reject) => {
     return fs.readFile('./data/source.txt', 'utf8' , (err, data) => {

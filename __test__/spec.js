@@ -100,6 +100,9 @@ describe('Bare Minimum Requirements', () => {
             const filepath = path.join(__dirname, '../', 'data/0.txt');
 
             fs.readFile(filepath, 'utf8', (e, data) => {
+              // console.log('this is data', data);
+              // console.log('this is res.body', res.body);
+
               expect(!data).to.equal(false);
               expect(res.body.body).to.equal(data);
               done();
