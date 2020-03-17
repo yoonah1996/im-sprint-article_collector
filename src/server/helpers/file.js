@@ -36,7 +36,7 @@ async function writeSourceListFile(body) {
 //source.txt파일의 n번째 줄을 읽는다.
 async function readLineFromSourceList(nthline) {
   return new Promise((resolve, reject) => {
-    return fs.readFile('./data/source.txt', 'utf8' , (err, data) => {
+    fs.readFile('./data/source.txt', 'utf8' , (err, data) => {
       if(err){
         reject(err)
       }else{

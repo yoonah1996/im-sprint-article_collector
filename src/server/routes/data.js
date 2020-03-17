@@ -21,7 +21,7 @@ router.get("/:line", async (req, res) => {
   /*
    * fs.existsSync 를 이용하여, 존재하지 않는 파일에 대해서 에러 핸들링을 할 수 있어야 합니다.
    */
-  const filename = `./data/${req.params.line}.txt`;
+  const filename = await `./data/${req.params.line}.txt`;
   res.set("Content-Type", "application/json");
 
 
@@ -33,7 +33,10 @@ router.get("/:line", async (req, res) => {
   //   res.send();
   // }
   return await readFile(filename)
-  .then(data=>res.send(JSON.stringify(data)))
+  .then(data=>{
+    // console.log(data);
+    res.send(JSON.stringify({body : data}))
+  })
   .catch(err=>res.send(err));
   
 
@@ -57,10 +60,10 @@ router.post("/:line", async (req, res) => {
 
   const readUrl = await readLineFromSourceList(lineNo);
   const readHtml = await retrieveArticle(readUrl);
-  console.log('readHtml', readHtml);
-  const dom = new JSDOM(typeof readHtml);
-  const articleInDom = dom.window.document.querySelector('#root').textContent;
-  console.log('this is article', articleInDom);
+  // console.log('readHtml', readHtml);
+  // const dom = new JSDOM(typeof readHtml);
+  // const articleInDom = dom.window.document.querySelector('#root').textContent;
+  // console.log('this is article', articleInDom);
 
   await wrtieFile(`./data/${lineNo}.txt`, readHtml)
   const read = readFile(`./data/${lineNo}.txt`)

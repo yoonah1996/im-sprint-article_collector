@@ -13,7 +13,7 @@ app.use(express.json())
 // GET /source
 router.get("/", async (req, res) => {
   // TODO: Help function을 이용하여, source.txt의 내용을 반환 수 있도록 구현하세요.
-  const result = await readFile('./data/source.txt');
+  const result = await fileHelper.readSourceListFile();
   res.status(200);
   res.send(result);
 });

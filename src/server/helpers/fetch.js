@@ -1,5 +1,6 @@
 const https = require('https');
 
+// 다시
 async function retrieveArticle(url) {
   // TODO: retrieve the html string from given url and return as promise
   return new Promise((resolve, reject) => {
@@ -7,7 +8,7 @@ async function retrieveArticle(url) {
       // console.log(res)
       res.on('data', (d) => {
         // process.stdout.write(d)
-        // console.log(d.toString());
+        // console.log("시작"+ d.toString() + "!!!!!!끝");
         resolve(d.toString());
       })
       .on('error', (e) => {

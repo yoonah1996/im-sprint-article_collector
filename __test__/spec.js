@@ -97,10 +97,10 @@ describe('Bare Minimum Requirements', () => {
         request(app)
           .get('/api/data/0')
           .then(res => {
+            // console.log(res.body.body);
             const filepath = path.join(__dirname, '../', 'data/0.txt');
 
             fs.readFile(filepath, 'utf8', (e, data) => {
-              // console.log('this is data', data);
               // console.log('this is res.body', res.body);
 
               expect(!data).to.equal(false);
