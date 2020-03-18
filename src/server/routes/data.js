@@ -43,7 +43,6 @@ router.get("/:line", async (req, res) => {
 // POST /data/{lineNo}
 router.post("/:line", async (req, res) => {
   const lineNo = req.params.line;
-  console.log(lineNo)
 
   // TODO : Help function을 이용하여, 주어진 filename에 내용을 저장할 수 있도록 구현하세요.
   /*
