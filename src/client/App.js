@@ -39,12 +39,12 @@ export default class App extends Component {
     fetch(`/api/data/${i}`)
       .then(res => res.json())
       .then((json) => {
-        this.setState( {
+        this.setState(prevState => ({
           currentItem: {
-            // ...prevState.currentItem,
+            ...prevState.currentItem,
             ...json
           }
-        });
+        }));
       });
   }
   //nowSaving을 true로 바꾼다음 this.state.currentItem.id를 포스트로 보낸다. 그리고 'ok'가 오면 nowSaving: false 하고

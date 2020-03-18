@@ -1,5 +1,3 @@
 https://medium.com/code-states/good-developer-1-%EC%A2%8B%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-5%EA%B0%80%EC%A7%80-%EA%B8%B0%EC%A4%80-b4b9f166caf7
-https://medium.com/javascript-in-plain-english/can-you-console-log-in-jsx-732f2ad46fe1
-https://medium.com/better-programming/fun-side-projects-that-you-can-build-today-553158597363?source=extreme_main_feed---------5-73--------------------b7fe8b7d_ab4b_4415_a2ae_1720f6fcacdd--8
-https://medium.com/better-programming/fun-side-projects-that-you-can-build-today-553158597363?source=extreme_main_feed---------5-73--------------------b7fe8b7d_ab4b_4415_a2ae_1720f6fcacdd--8
-https://medium.com/better-programming/fun-side-projects-that-you-can-build-today-553158597363?source=extreme_main_feed---------5-73--------------------b7fe8b7d_ab4b_4415_a2ae_1720f6fcacdd--8
+https://medium.com/code-states/good-developer-1-%EC%A2%8B%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-5%EA%B0%80%EC%A7%80-%EA%B8%B0%EC%A4%80-b4b9f166caf7
+https://medium.com/code-states/good-developer-1-%EC%A2%8B%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-5%EA%B0%80%EC%A7%80-%EA%B8%B0%EC%A4%80-b4b9f166caf7

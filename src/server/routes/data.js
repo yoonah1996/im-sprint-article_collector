@@ -32,6 +32,9 @@ router.get("/:line", async (req, res) => {
   }else{
     res.send({id:req.params.line, status : 'nonexist'});
   }
+
+  //res.send 할때 id, body, status를 각각
+
   // return await readFile(filename)
   // .then(data=>res.send(JSON.stringify({body: data})))
   // .catch(err=>res.send(err));
@@ -40,6 +43,7 @@ router.get("/:line", async (req, res) => {
 // POST /data/{lineNo}
 router.post("/:line", async (req, res) => {
   const lineNo = req.params.line;
+  console.log(lineNo)
 
   // TODO : Help function을 이용하여, 주어진 filename에 내용을 저장할 수 있도록 구현하세요.
   /*
@@ -53,14 +57,10 @@ router.post("/:line", async (req, res) => {
 
   const readUrl = await readLineFromSourceList(lineNo);
   const readHtml = await retrieveArticle(readUrl);
-  // console.log('readHtml', readHtml);
-
   const dom = new JSDOM(readHtml);
   const articleInDom = dom.window.document.querySelector('#root article').textContent;
   
-
   await wrtieFile(`./data/${lineNo}.txt`, articleInDom)
-  // const read = readFile(`./data/${lineNo}.txt`)
   res.send('ok');
 
 });
