@@ -1,5 +1,5 @@
 const express = require("express");
-const fs = require("fs");
+const fs = require("fs"); 
 const jsdom = require("jsdom");
 
 const fetchHelper = require("../helpers/fetch");
@@ -24,20 +24,17 @@ router.get("/:line", async (req, res) => {
   const filename = await `./data/${req.params.line}.txt`;
   res.set("Content-Type", "application/json");
 
-
-  // const isFile = fs.existsSync(filename);
-  // if(isFile){
-  //   return await readFile(filename)
-  //   .then(data=>res.send(JSON.stringify(data)))
-  // }else{
-  //   res.send();
-  // }
-  return await readFile(filename)
-  .then(data=>res.send(JSON.stringify({body: data})))
-  .catch(err=>res.send(err));
-  
-
-  
+  const isFile = fs.existsSync(filename);
+  if(isFile){
+    return await readFile(filename)
+    .then(data=>res.send(JSON.stringify({id:req.params.line, body: data, status : ''})))
+    .catch(err => res.send(err))
+  }else{
+    res.send({id:req.params.line, status : 'nonexist'});
+  }
+  // return await readFile(filename)
+  // .then(data=>res.send(JSON.stringify({body: data})))
+  // .catch(err=>res.send(err));
 });
 
 // POST /data/{lineNo}
@@ -51,7 +48,6 @@ router.post("/:line", async (req, res) => {
    * 2) url을 통해, article contents를 얻어낸다. ( JSDOM을 이용하여, medium 블로그의 글 내용을 얻을 수 있도록 하세요.)
    * 3) 얻어낸 article contents를 저장한다. (ex : filename , data/${lineNo}.txt)
    */
-
   // const dom1 = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
   // console.log(dom.window.document.querySelector("p").textContent); //hello world
 
@@ -64,8 +60,8 @@ router.post("/:line", async (req, res) => {
   
 
   await wrtieFile(`./data/${lineNo}.txt`, articleInDom)
-  const read = readFile(`./data/${lineNo}.txt`)
-  res.send(read);
+  // const read = readFile(`./data/${lineNo}.txt`)
+  res.send('ok');
 
 });
 

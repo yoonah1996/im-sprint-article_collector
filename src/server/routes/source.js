@@ -5,7 +5,8 @@ const fileHelper = require("../helpers/file");
 const router = express.Router();
 
 
-const readFile = fileHelper.readFile;
+// const readFile = fileHelper.readFile; 
+//await readFile('./data/source.txt', req.body); //17번째 줄
 const writeFile = fileHelper.writeFile;
 
 app.use(express.json())
