@@ -11,7 +11,7 @@ export default class App extends Component {
       status: null
     }
   };
-
+//source.txt파일 내용울 가져와서 sources에 넣어준다.
   componentDidMount() {
     fetch('/api/source')
       .then(res => res.text())
@@ -20,6 +20,7 @@ export default class App extends Component {
       });
   }
 
+  //nowEditing을 바꿔준 다음 sources를 바디로 포스트를 보내는데  source.txt파일에 보낸다.
   handleClickSaveSource() {
     this.toggleMode();
     fetch('/api/source',
@@ -33,6 +34,7 @@ export default class App extends Component {
       });
   }
 
+  //i번째 파일을 읽어온다.
   handleClickItem(i) {
     fetch(`/api/data/${i}`)
       .then(res => res.json())
@@ -45,7 +47,8 @@ export default class App extends Component {
         }));
       });
   }
-
+  //nowSaving을 true로 바꾼다음 this.state.currentItem.id를 포스트로 보낸다. 그리고 'ok'가 오면 nowSaving: false 하고
+  //handleClickItem 함수를 실행 시킨다.
   handleClickSaveItem() {
     this.setState({ nowSaving: true });
 
@@ -66,10 +69,12 @@ export default class App extends Component {
       });
   }
 
+  //sources를 e.target.value?로 바꿔준다.
   handleChangeValue(e) {
     this.setState({ sources: e.target.value });
   }
 
+  // 취소를 누르면 state값 초기화
   handleClickCancel() {
     this.setState({
       currentItem: {
@@ -79,7 +84,7 @@ export default class App extends Component {
       }
     });
   }
-
+  // ture 면 false, flase면 true로 바꿔준다.
   toggleMode() {
     this.setState(prevState => ({ nowEditing: !prevState.nowEditing }));
   }
