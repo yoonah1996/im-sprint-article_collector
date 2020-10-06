@@ -57,7 +57,7 @@ router.post("/:line", async (req, res) => {
   const readUrl = await readLineFromSourceList(lineNo);
   const readHtml = await retrieveArticle(readUrl);
   const dom = new JSDOM(readHtml);
-  const articleInDom = dom.window.document.querySelector('#root article').textContent;
+  const articleInDom = dom.window.document.querySelector('article').textContent;
   
   await wrtieFile(`./data/${lineNo}.txt`, articleInDom)
   res.send('ok');
@@ -65,10 +65,6 @@ router.post("/:line", async (req, res) => {
 });
 
 module.exports = router;
-
-
-
-
 
 
  // readLineFromSourceList(lineNo)
